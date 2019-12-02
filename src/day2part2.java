@@ -1,9 +1,7 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Arrays;
 
-public class day2 {
+public class day2part2 {
     public static void main(String[] args) throws IOException {
         int index = 0;
         int num1; int num2; int num3; int total;
@@ -27,5 +25,14 @@ public class day2 {
         }
         System.out.println(Arrays.toString(input));
         br.close();
+    }
+
+    public static void ResetFile() throws IOException{
+        FileReader fr = new FileReader("day2input");
+        BufferedReader br = new BufferedReader(fr);
+        FileWriter fw = new FileWriter("day2inputCopy");
+        BufferedWriter bw = new BufferedWriter(fw);
+        String line = br.readLine();
+
     }
 }

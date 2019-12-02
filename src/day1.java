@@ -19,5 +19,6 @@ public class day1 {
             }
         }while((line = br.readLine()) != null);
         System.out.println(total);
+        br.close();
     }
 }
