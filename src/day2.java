@@ -11,6 +11,8 @@ public class day2 {
         BufferedReader br = new BufferedReader(fr);
         String line = br.readLine();
         String[] input = line.split(",");
+        input[1] = String.valueOf(12);
+        input[2] = String.valueOf(2);
         while(!input[index].equals("99")){
             num1 = Integer.parseInt(input[index+1]);
             num2 = Integer.parseInt(input[index+2]);
