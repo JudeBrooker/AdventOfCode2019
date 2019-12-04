@@ -14,9 +14,8 @@ public class day3 {
         String[] wire2 = line.split(",");
         int[][] Coordinates1 = FindCoordinates(wire1);
         int[][] Coordinates2 = FindCoordinates(wire2);
-//        System.out.println(Arrays.deepToString(Coordinates1));
         for(int i=0;i<Coordinates1.length-1;i++){
-            if(Coordinates1[i] == Coordinates2[i]){
+            if(Coordinates1[i][0] == Coordinates2[i][0] && Coordinates1[i][1] == Coordinates2[i][1]){
                 int Distance=0;
                 if(Coordinates1[i][0]>0){
                     Distance += Coordinates1[i][0];
@@ -33,33 +32,34 @@ public class day3 {
                 if(Distance < minDistance){
                     minDistance = Distance;
                 }
-
             }
         }
         System.out.println(minDistance);
-
     }
     private static int[][] FindCoordinates(String[] wire){
         String direction;
         int length;
-        int[][] Coordinates = new int[wire.length][2];
+        int[][] Coordinates = new int[9][2];
         int[] coordinate = {0,0};
         for (int i = 0;i<wire.length;i++) {
             direction = wire[i].substring(0,1);
-            System.out.println(direction);
             length = Integer.parseInt(wire[i].substring(1));
             switch(direction){
                 case "R":
                     coordinate[0] += length;
-//                    System.out.println(Arrays.toString(coordinate));
+                    break;
                 case "L":
                     coordinate[0] -= length;
+                    break;
                 case "U":
                     coordinate[1] += length;
+                    break;
                 case "D":
                     coordinate[1] -= length;
+                    break;
             }
-            Coordinates[i] = coordinate;
+            Coordinates[i][0] = coordinate[0];
+            Coordinates[i][1] = coordinate[1];
         }
         return Coordinates;
     }
