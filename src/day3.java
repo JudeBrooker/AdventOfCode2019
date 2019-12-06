@@ -15,7 +15,8 @@ public class day3 {
         int[][] Coordinates1 = FindCoordinates(wire1);
         int[][] Coordinates2 = FindCoordinates(wire2);
         for(int i=0;i<Coordinates1.length-1;i++){
-            if(Coordinates1[i][0] == Coordinates2[i][0] && Coordinates1[i][1] == Coordinates2[i][1]){
+            if(Coordinates1[i][0]>Coordinates2[i][0] && Coordinates1[i][0]<Coordinates2[i+1][0] && Coordinates1[i][1]>Coordinates2[i][1] && Coordinates1[i][0]<Coordinates2[i+1][1]){
+                System.out.println("Test");
                 int Distance=0;
                 if(Coordinates1[i][0]>0){
                     Distance += Coordinates1[i][0];
